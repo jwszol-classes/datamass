@@ -1,1 +1,1 @@
-# datamass-kainos
+# datamass
