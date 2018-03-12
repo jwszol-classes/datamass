@@ -25,7 +25,7 @@ public class Driver {
         job.setReducerClass(ReducerWordCount.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
-        //job.setNumReduceTasks(2);
+        job.setNumReduceTasks(8);
 
         FileInputFormat.addInputPath(job, input);
         FileOutputFormat.setOutputPath(job, output);

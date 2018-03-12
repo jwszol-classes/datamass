@@ -12,13 +12,14 @@ public class MapWordCount extends Mapper<LongWritable, Text, Text, IntWritable> 
     public void map(LongWritable key, Text value, Context con) throws IOException, InterruptedException
     {
         String line = value.toString();
-        String[] words=line.split(",");
-        for(String word: words )
+        String[] words=line.split("\t");
+        for(int i = 0; i < words.length; i++)
         {
-            Text outputKey = new Text(word.toUpperCase().trim());
-            IntWritable outputValue = new IntWritable(1);
+            Text outputKey = new Text(words[i].toUpperCase().trim());
+            IntWritable outputValue = new IntWritable(i);
             con.write(outputKey, outputValue);
         }
+
     }
 
 }
