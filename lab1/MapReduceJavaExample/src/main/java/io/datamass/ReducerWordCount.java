@@ -26,7 +26,6 @@ public class ReducerWordCount extends Reducer<Text, IntWritable, Text, WritableP
         for (int i = 0; i < COLUMNS; i++) {
             int count = counters[i];
             if (count > 0) {
-
                 float perc = count * 100f / mapperCounter;
                 con.write(word, new WritablePair(i, perc));
             }
