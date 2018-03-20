@@ -12,7 +12,6 @@ public class Driver {
         kcp.send("my_testing_topic","{\"date\":\"2018-03-21\"}");
 
         KafkaCustomConsumer kcc = new KafkaCustomConsumer();
-        kcc.receive();
-
+        kcc.receive("my_testing_topic");
     }
 }
