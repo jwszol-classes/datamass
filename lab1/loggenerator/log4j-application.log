@@ -1,0 +1,3 @@
+2018-03-19 00:45:35 INFO  Driver:16 - Kafka message comes in
+2018-03-19 00:45:45 ERROR Driver:18 - Kafka message error in processing
+2018-03-19 00:45:55 INFO  Driver:16 - Kafka message comes in
