@@ -1,6 +1,6 @@
 package io.datamass
 
-import org.apache.spark.SparkContext
+import org.apache.spark.{SparkConf, SparkContext}
 
 
 object Driver {
@@ -11,7 +11,11 @@ object Driver {
       System.exit(1)
     }
 
-    val sc = new SparkContext()
+    val sparkConf = new SparkConf()
+      .setAppName("WordCount")
+      .set("spark.ui.port","4044")
+
+    val sc = new SparkContext(sparkConf)
 
     val counts = sc.textFile(args(0))
       .flatMap(line => line.split("\t"))
@@ -20,6 +24,7 @@ object Driver {
 
     counts.take(5).foreach(println)
 
+    //counts.saveAsTextFile("/user/cloudera/sparkoutput")
+    sc.stop()
   }
-
 }
