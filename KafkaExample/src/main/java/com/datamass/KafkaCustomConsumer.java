@@ -14,7 +14,7 @@ public class KafkaCustomConsumer {
 
     public KafkaCustomConsumer() {
         Map<String, Object> consumerConfig = new HashMap();
-        consumerConfig.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "maedev2146.mpsdev.acxiom.net:9092");
+        consumerConfig.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         consumerConfig.put(ConsumerConfig.GROUP_ID_CONFIG, "ep_group");
         consumerConfig.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         consumerConfig.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
